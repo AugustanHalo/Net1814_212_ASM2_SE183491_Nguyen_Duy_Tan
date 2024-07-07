@@ -1,0 +1,75 @@
+﻿<Window x:Class="Net1814_212_ASM2_SE183491_NguyenDuyTan.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Net1814_212_ASM2_SE183491_NguyenDuyTan"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="1700">
+    <Grid>
+        <Canvas Background="Azure">
+
+            <Label x:Name="lblInstructions" Canvas.Left="17" Canvas.Top="14" 
+                   Width="328" Height="27" FontSize="15" Content="Enter OrderItem Information"/>
+
+            <Label x:Name="lblOrderItemId" Canvas.Left="17" Canvas.Top="50" Content="OrderItemId:"/>
+            <TextBox x:Name="txtOrderItemId" Canvas.Left="114" Canvas.Top="50" Width="193" Height="25"
+                     Text="{Binding OrderItemId, Mode=TwoWay}" DataContext="{Binding SelectedItem, ElementName=OrderItems}" />
+
+            <Label x:Name="lblOrderId" Canvas.Left="17" Canvas.Top="90" Content="OrderId:"/>
+            <TextBox x:Name="txtOrderId" Canvas.Left="114" Canvas.Top="90" Width="193" Height="25"
+                     Text="{Binding OrderId, Mode=TwoWay}" DataContext="{Binding SelectedItem, ElementName=OrderItems}" />
+
+            <Label x:Name="lblProductId" Canvas.Left="17" Canvas.Top="130" Content="Product Id:"/>
+            <TextBox x:Name="txtProductId" Canvas.Left="114" Canvas.Top="130" Width="193" Height="25"
+                     Text="{Binding ProductId, Mode=TwoWay}" DataContext="{Binding SelectedItem, ElementName=OrderItems}" />
+
+            <Label x:Name="lblQuantity" Canvas.Left="17" Canvas.Top="170" Content="Quantity:"/>
+            <TextBox x:Name="txtQuantity" Canvas.Left="114" Canvas.Top="170" Width="193" Height="25"
+                     Text="{Binding Quantity, Mode=TwoWay}" DataContext="{Binding SelectedItem, ElementName=OrderItems}" />
+
+            <Label x:Name="lblPrice" Canvas.Left="17" Canvas.Top="210" Content="Price:"/>
+            <TextBox x:Name="txtPrice" Canvas.Left="114" Canvas.Top="210" Width="193" Height="25"
+                     Text="{Binding Price, Mode=TwoWay}" DataContext="{Binding SelectedItem, ElementName=OrderItems}" />
+
+            <Button x:Name="Show" Canvas.Left="24" Height="28" Canvas.Top="490"
+                    Width="80" Content="Show" Click="btnShow_Click" />
+
+            <Button x:Name="Add" Canvas.Left="124" Height="28" Canvas.Top="490"
+                    Width="80" Content="Add" Click="btnAdd_Click" />
+
+            <Button x:Name="Update" Canvas.Left="224" Height="28" Canvas.Top="490"
+                    Width="80" Content="Update" Click="btnUpdate_Click" />
+
+            <Button x:Name="Delete" Canvas.Left="324" Height="28" Canvas.Top="490"
+                    Width="80" Content="Delete" Click="btnDelete_Click" />
+
+            <Button x:Name="JSON" Canvas.Left="424" Height="28" Canvas.Top="490"
+                    Width="80" Content="Save JSON" Click="btnSaveJSON_Click" />
+
+            <Button x:Name="LoadJSON" Canvas.Left="524" Height="28" Canvas.Top="490"
+                    Width="80" Content="Load JSON" Click="btnLoadJSON_Click" />
+
+            <Button x:Name="XML" Canvas.Left="624" Height="28" Canvas.Top="490"
+                    Width="80" Content="Save XML" Click="btnSaveXML_Click" />
+
+            <Button x:Name="LoadXML" Canvas.Left="724" Height="28" Canvas.Top="490"
+                    Width="80" Content="Load XML" Click="btnLoadXML_Click" />
+
+            <DataGrid x:Name="OrderItems" Canvas.Left="410" Height="450" Canvas.Top="10" AutoGenerateColumns="False" 
+                      MouseLeftButtonUp="OrderItems_MouseLeftButtonUp" CanUserAddRows="False" SelectionChanged="OrderItems_SelectionChanged">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="OrderItem ID" Width="100" 
+                                        Binding="{Binding Path=OrderItemId}"/>
+                    <DataGridTextColumn Header="Order ID" Width="150" 
+                                        Binding="{Binding Path=OrderId}"/>
+                    <DataGridTextColumn Header="Product ID" Width="100" 
+                                        Binding="{Binding Path=ProductId}"/>
+                    <DataGridTextColumn Header="Quantity" Width="200" 
+                                        Binding="{Binding Path=Quantity}"/>
+                    <DataGridTextColumn Header="Price" Width="100" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </Canvas>
+    </Grid>
+</Window>
