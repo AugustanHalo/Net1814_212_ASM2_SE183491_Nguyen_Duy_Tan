@@ -67,7 +67,9 @@
                                         Binding="{Binding Path=ProductId}"/>
                     <DataGridTextColumn Header="Quantity" Width="200" 
                                         Binding="{Binding Path=Quantity}"/>
-                    <DataGridTextColumn Header="Price" Width="100" />
+                    <DataGridTextColumn Header="Price" Width="100" 
+                                        Binding="{Binding Path=Price}"/>
+                    
                 </DataGrid.Columns>
             </DataGrid>
         </Canvas>

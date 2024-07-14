@@ -1,7 +1,7 @@
 ﻿<Application x:Class="Net1814_212_ASM2_SE183508_DangNgocThinhAn.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:Net1814_212_ASM2_SE183508_DangNgocThinhAn"
+             xmlns:local="clr-namespace:Net1814_212_ASM2_SE183491_NguyenDuyTan"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
          

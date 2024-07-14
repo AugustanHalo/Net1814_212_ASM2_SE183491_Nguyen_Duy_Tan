@@ -138,7 +138,7 @@ namespace Net1814_212_ASM2_SE183491_NguyenDuyTan
             {
                 if (orderitems.Count > 0)
                 {
-                    XmlSerializer serializer = new XmlSerializer(typeof(List<SiProduct>));
+                    XmlSerializer serializer = new XmlSerializer(typeof(List<Orderitem>));
                     using FileStream f = File.Create(XMLfilepath);
                     serializer.Serialize(f, orderitems);
                     MessageBox.Show("OrderItems saved to XML file successfully!");
@@ -156,7 +156,7 @@ namespace Net1814_212_ASM2_SE183491_NguyenDuyTan
             {
                 if (File.Exists(XMLfilepath))
                 {
-                    XmlSerializer serializer = new XmlSerializer(typeof(List<SiProduct>));
+                    XmlSerializer serializer = new XmlSerializer(typeof(List<Orderitem>));
                     using FileStream xmlLoad = File.Open(XMLfilepath, FileMode.Open);
                     var loadedOrderItems = (List<Orderitem>)serializer.Deserialize(xmlLoad);
                     orderitems = loadedOrderItems;
